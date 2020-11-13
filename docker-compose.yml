@@ -1,7 +1,7 @@
 version: '2.3'
 services:
   facenet:
-    build: .
+    build: facenet
     runtime: nvidia
     command: sh /facenet/run_jupyter.sh
     ports:

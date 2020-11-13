@@ -15,9 +15,10 @@ RUN unzip 4.1.0.zip && rm -rf 4.1.0.zip && mv opencv-4.1.0 OpenCV && cd OpenCV &
     make -j16 && make install && ldconfig
 RUN apt-get -y autoremove && apt-get -y autoclean
 RUN rm -rf /var/cache/apt
-ADD ./facenet/requirements.txt /facenet/requirements.txt
+RUN pip3 install --upgrade pip
+ADD ./requirements.txt /facenet/requirements.txt
 RUN pip3 install -r /facenet/requirements.txt
 
-ADD ./facenet /facenet/
+ADD ./ /facenet/
 WORKDIR /facenet/
 
