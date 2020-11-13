@@ -1,6 +1,6 @@
 version: '2.3'
 services:
-  alpr:
+  facenet:
     build: .
     runtime: nvidia
     command: sh /facenet/run_jupyter.sh
